@@ -6,7 +6,8 @@ enum OPCODE {
     LI = 0b001,
     J = 0b010,
     SYSCALL = 0b011,
-    SZ = 0b100,
+    BEQ = 0b100,
+    ADDI = 0b101,
 }
 #[repr(u8)]
 enum REGISTRY {
@@ -28,7 +29,8 @@ pub const OP_DICTIONARY: [(char, u8); 8] = [
     ('白', OPCODE::LI as u8),
     ('赤', OPCODE::J as u8),
     ('青', OPCODE::SYSCALL as u8),
-    ('紫', OPCODE::SZ as u8),
+    ('紫', OPCODE::BEQ as u8),
+    ('緑', OPCODE::ADDI as u8),
 ];
 
 pub const REG_DICTIONARY: [(char, u8); 4] = [
