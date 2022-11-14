@@ -32,6 +32,7 @@
     	beq $a1 0 middle
     	j localMult
     	middle:
+    	beq $a2 0 end
     	addi $a2 $a2 -1
     	beq $a2 0 end
     	addi $a1 $a2 0
