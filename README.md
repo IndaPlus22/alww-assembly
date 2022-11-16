@@ -4,7 +4,7 @@
 
 ## Elements
 
-There are only four elements available in this language: `火`, `水`, `地` and `木` for the gods have banished `銀` for this world, only imbalance remains.
+There are only four elements available in this language: `火`, `水`, `地` and `木` for the gods have banished `銀` from this world, only imbalance remains.
 
 ## Instructions
 
