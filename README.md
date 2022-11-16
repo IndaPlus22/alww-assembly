@@ -25,5 +25,6 @@ There are only four elements available in this language: `火`, `水`, `地` and
 | --------- | --------------------------------- | ------------------------------------- |
 | cargo run | `cargo run filename.fesu execute` | `Execute` the `filename.fesu` program |
 
-| Example |
-| `cargo run factorial.fesu execute` |
+## Example
+
+`cargo run factorial.fesu execute`
