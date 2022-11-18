@@ -37,14 +37,13 @@ pub fn execute(file_contents: String) {
         let OP = instructions.first().unwrap();
         match OP.to_owned() {
             OPCODE::ADD => {
-                let mut tmp_target_r: usize = 0;
+                let mut tmp_target_r: i32 = 0;
                 let mut tmp1 = 0;
-                let mut tmp2 = 0;
                 match instructions[1] {
-                    REGISTRY::R1 => tmp_target_r = 0,
-                    REGISTRY::R2 => tmp_target_r = 1,
-                    REGISTRY::R3 => tmp_target_r = 2,
-                    REGISTRY::R4 => tmp_target_r = 3,
+                    REGISTRY::R1 => tmp_target_r = registers[0],
+                    REGISTRY::R2 => tmp_target_r = registers[1],
+                    REGISTRY::R3 => tmp_target_r = registers[2],
+                    REGISTRY::R4 => tmp_target_r = registers[3],
                     _ => panic!("Error parsing argument 1 line {}", current_line),
                 }
                 match instructions[2] {
@@ -54,14 +53,14 @@ pub fn execute(file_contents: String) {
                     REGISTRY::R4 => tmp1 = registers[3],
                     _ => panic!("Error parsing argument 2 line {}", current_line),
                 }
-                match instructions[3] {
-                    REGISTRY::R1 => tmp2 = registers[0],
-                    REGISTRY::R2 => tmp2 = registers[1],
-                    REGISTRY::R3 => tmp2 = registers[2],
-                    REGISTRY::R4 => tmp2 = registers[3],
-                    _ => panic!("Error parsing argument 3 line {}", current_line),
+
+                match instructions[1] {
+                    REGISTRY::R1 => registers[0] = tmp1 + tmp_target_r,
+                    REGISTRY::R2 => registers[1] = tmp1 + tmp_target_r,
+                    REGISTRY::R3 => registers[2] = tmp1 + tmp_target_r,
+                    REGISTRY::R4 => registers[3] = tmp1 + tmp_target_r,
+                    _ => panic!("Error parsing argument 1 line {}", current_line),
                 }
-                registers[tmp_target_r] = tmp1 + tmp2;
             }
             OPCODE::ADDI => {
                 let mut tmp_target_r = 0;

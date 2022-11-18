@@ -2,8 +2,9 @@
 	li $v0, 5
     	syscall
     	addi $a0, $v0, 0
-    	addi $a2 $a0 -2
-    	add $v0, $a1, $a1
+    	addi $a2 $a0 -1
+    	addi $a2 $a2 -1
+    	addi $v0, $a1, 0
     	beq $a0 0 facOne
     	j next
     	facOne:

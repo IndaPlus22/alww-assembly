@@ -10,7 +10,7 @@ There are only four elements available in this language: `火`, `水`, `地` and
 
 | Colors | Syntax                   | Explanation                                                                    |
 | ------ | ------------------------ | ------------------------------------------------------------------------------ |
-| `黒`   | `黒 rs rt rd`            | Set value of `rs` to value of `rt` + value of `rd`                             |
+| `黒`   | `黒 rs rt`               | Set value of `rs` to value of `rs` + value of `rt`                             |
 | `緑`   | `緑 rs rt imm`           | Set value of `rs` to value of `rt` + immediate `imm`                           |
 | `白`   | `白 rs imm`              | Set value of `rs` to immediate `imm`                                           |
 | `紫`   | `紫 rs/imm rt/imm label` | Jump 1-bit unsigned rows to a label if `rs/imm` is equal to immediate `rt/imm` |
